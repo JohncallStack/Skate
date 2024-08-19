@@ -1,0 +1,23 @@
+{
+  "name": "skate",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npm run start -w frontend",
+    "deploy": "npm run cdk deploy -w backend"
+
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@angular/cli": "^18.2.0",
+    "aws-cdk": "^2.152.0"
+  },
+  "workspaces": [
+    "backend",
+    "frontend"
+  ]
+}
