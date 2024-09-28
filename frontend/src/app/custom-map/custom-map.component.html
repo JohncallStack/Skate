@@ -1,0 +1,30 @@
+<div class="map-container">
+
+  <div class="search-container">
+    <input
+      type="text"
+      placeholder="Search for a location..."
+      #searchInput
+    />
+    <button (click)="searchLocation(searchInput.value)">Search</button>
+  </div>
+
+
+  <google-map [center]="center" [zoom]="zoom">
+    <map-marker
+      *ngFor="let marker of markersArray"
+      #markerElem="mapMarker"
+      [position]="marker.position"
+      [title]="marker.title"
+      (mapClick)="openInfo(markerElem, marker.info, marker.title)"
+    ></map-marker>
+
+    <map-info-window>
+        <div>
+          <h3>{{ nameContent }}</h3>
+          <p>{{ infoContent }}</p>
+          <p>INFO</p>
+        </div>
+    </map-info-window>
+  </google-map>
+</div>

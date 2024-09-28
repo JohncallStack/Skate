@@ -1,0 +1,12 @@
+
+  <div class="card" >
+    <h1>{{ weatherData?.name }}</h1>
+    <p>{{ (weatherData?.main?.temp - 273.15).toFixed(1) }}°C</p>
+    <p>Humidity: {{ weatherData?.main?.humidity }}%</p>
+    <p>{{ weatherData?.weather[0]?.description }}</p>
+    <p>{{ getWeatherEmoji(weatherData?.weather[0]?.id) }}</p>
+  </div>
+  <p  class="errorDisplay">{{ errorMessage }}</p>
+
+  <!-- *ngIf="weatherData"
+  *ngIf="errorMessage" -->

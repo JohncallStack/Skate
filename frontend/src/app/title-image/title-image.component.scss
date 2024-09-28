@@ -1,0 +1,37 @@
+.img_bw {
+    filter: grayscale(100%);
+}
+
+.card {
+    position: relative; /* Ensures that the overlay positions itself relative to the card */
+  }
+  
+  .card-img-overlay {
+    position: absolute;
+    bottom: 15%; /* Positions the text in the lower third */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the text horizontally */
+    text-align: center; /* Centers the text within the overlay */
+    color: white; /* Ensures text is visible */
+    padding: 10px 0;
+  }
+  
+  .card-title {
+    font-size: 6vw; /* Responsive font size relative to viewport width */
+    margin-bottom: 0.5rem; /* Small spacing between title and text */
+  }
+  
+  .card-text {
+    font-size: 3vw; /* Slightly smaller for subtitle */
+    width: 100%; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the text */
+  }
+  
+  .img-fluid {
+    width: 100%; /* Ensure the image is responsive */
+    height: auto; /* Maintain aspect ratio */
+  }
+  
+  .img_bw {
+    filter: grayscale(100%); /* Make the image black and white */
+  }

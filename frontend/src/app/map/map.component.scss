@@ -1,0 +1,11 @@
+.center-section {
+  display: flex; /* Use flexbox */
+  align-items: center; /* Center vertically */
+  justify-content: center; /* Center horizontally */
+  padding: 20px 0; /* Add padding on top and bottom */
+}
+
+.center-div {
+  text-align: center; /* Center text within the div */
+  width: 50%; /* Optional: Set a width */
+}
