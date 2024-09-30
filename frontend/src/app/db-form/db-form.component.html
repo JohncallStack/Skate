@@ -1,0 +1,51 @@
+<div class="container">
+
+    <form [formGroup]="newParkForm" (ngSubmit)="submit()">
+      <label for="name">Name:</label>
+      <input id="name" formControlName="name" required /><br>
+      <!-- <div *ngIf="newParkForm.controls.name.invalid && newParkForm.controls.name.touched">
+        <small *ngIf="newParkForm.controls.name.errors?.required">Name is required.</small> -->
+      <!-- </div> -->
+        
+      <label for="address">Address:</label>
+      <input id="address" formControlName="address" /><br>
+
+      <label for="lat">Latitude:</label>
+      <input id="lat" type="number" formControlName="lat" required /><br>
+      <div *ngIf="newParkForm.controls.lat.invalid && newParkForm.controls.lat.touched">
+        <!-- <small *ngIf="newParkForm.controls.lat.errors?.required">Latitude is required.</small>
+        <small *ngIf="newParkForm.controls.lat.errors?.pattern">Invalid latitude format.</small> -->
+      </div>
+  
+      <label for="lng">Longitude:</label>
+      <input id="lng" type="number" formControlName="lng" required /><br>
+      <div *ngIf="newParkForm.controls.lng.invalid && newParkForm.controls.lng.touched">
+        <!-- <small *ngIf="newParkForm.controls.lng.errors?.required">Longitude is required.</small>
+        <small *ngIf="newParkForm.controls.lng.errors?.pattern">Invalid longitude format.</small> -->
+      </div>
+  
+      <label for="surfaceType">Surface Type:</label>
+      <input id="surfaceType" formControlName="surfaceType" /><br>
+      
+      <label for="description">Description:</label>
+      <textarea id="description" formControlName="description"></textarea><br>
+  
+      <label for="mainImage">Main Image ID:</label>
+      <input id="mainImage" formControlName="mainImage" required /><br>
+  
+      <label for="parking">Parking:</label>
+      <input id="parking" formControlName="parking" /><br>
+  
+      <label for="website">Website:</label>
+      <input id="website" formControlName="website" /><br>
+  
+      <button style="color: white; " type="submit" [disabled]="newParkForm.invalid">Submit</button>
+    </form>
+  
+    <div *ngFor="let park of parks | async">
+      <p>{{park.name}}</p>
+    </div>
+  
+  </div>
+  
+  <router-outlet></router-outlet>

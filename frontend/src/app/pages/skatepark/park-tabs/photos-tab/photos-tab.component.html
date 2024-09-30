@@ -1,0 +1,10 @@
+  <div #sliderContainer class = "slider">
+        <div class="slides">
+            <img #slide *ngFor="let image of images" class="slide" [src]="image" alt="Image can't display">
+        </div>
+        <!-- <div>
+            <img [src]="park?.mainImage?.imageID" alt="">
+        </div> -->
+        <button class="prev" (click)="prevSlide()"> &#10094; </button>
+        <button class="next" (click)="nextSlide()"> &#10095;  </button>
+    </div>

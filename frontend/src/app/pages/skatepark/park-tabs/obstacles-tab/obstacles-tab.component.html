@@ -1,0 +1,148 @@
+<div class="d-flex align-items-start">
+  <div
+    class="nav flex-column nav-tabs me-3"
+    id="v-pills-tab"
+    role="tablist"
+    aria-orientation="vertical"
+  >
+    <a
+      class="nav-link active"
+      id="v-pills-ramps-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#v-pills-ramps"
+      role="tab"
+      aria-controls="v-pills-ramps"
+      aria-selected="true"
+      (click)="setActiveTab('ramps')"
+      [class.active]="activeTab === 'ramps'"
+      >Ramps</a
+    >
+    <a
+      class="nav-link"
+      id="v-pills-ledges-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#v-pills-ledges"
+      role="tab"
+      aria-controls="v-pills-ledges"
+      aria-selected="true"
+      (click)="setActiveTab('ledges')"
+      [class.active]="activeTab === 'ledges'"
+      >Ledges</a
+    >
+    <a
+      class="nav-link"
+      id="v-pills-rails-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#v-pills-rails"
+      role="tab"
+      aria-controls="v-pills-rails"
+      aria-selected="false"
+      (click)="setActiveTab('rails')"
+      [class.active]="activeTab === 'rails'"
+      >Rails</a
+    >
+    <a
+      class="nav-link"
+      id="v-pills-banks-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#v-pills-banks"
+      role="tab"
+      aria-controls="v-pills-banks"
+      aria-selected="false"
+      (click)="setActiveTab('banks')"
+      [class.active]="activeTab === 'banks'"
+      >Banks</a
+    >
+    <a
+      class="nav-link"
+      id="v-pills-stairs-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#v-pills-stairs"
+      role="tab"
+      aria-controls="v-pills-stairs"
+      aria-selected="false"
+      (click)="setActiveTab('stairs')"
+      [class.active]="activeTab === 'stairs'"
+      >Stairs</a
+    >
+    <a
+      class="nav-link"
+      id="v-pills-other-tab"
+      data-bs-toggle="pill"
+      data-bs-target="#v-pills-other"
+      role="tab"
+      aria-controls="v-pills-other"
+      aria-selected="false"
+      (click)="setActiveTab('other')"
+      [class.active]="activeTab === 'other'"
+      >Other</a
+    >
+  </div>
+
+  <div class="tab-content" id="v-pills-tabContent">
+    <div   
+    class="tab-pane fade show active"
+    id="v-pills-ramps"
+    role="tabpanel"
+    [ngClass]="{'show active': activeTab === 'ramps'}"
+    aria-labelledby="v-pills-ramps-tab"
+    tabindex="0">
+      <app-ramps id="v-pills-ramps" [park]="park" />
+    </div>
+
+    <div
+    class="tab-pane fade show active"
+    id="v-pills-ledges"
+    role="tabpanel"
+    [ngClass]="{'show active': activeTab === 'ledges'}"
+    aria-labelledby="v-pills-ledges-tab"
+    tabindex="0">
+      <app-ledges [park]="park" />
+    </div>
+
+    <div
+    class="tab-pane fade show active"
+    id="v-pills-rails"
+    role="tabpanel"
+    [ngClass]="{'show active': activeTab === 'rails'}"
+    aria-labelledby="v-pills-rails-tab"
+    tabindex="0">
+      <app-rails [park]="park" />
+    </div>
+
+    <div 
+    class="tab-pane fade show active"
+    id="v-pills-banks"
+    role="tabpanel"
+    [ngClass]="{'show active': activeTab === 'banks'}"
+    aria-labelledby="v-pills-banks-tab"
+    tabindex="0">
+      <app-banks [park]="park" />
+    </div>
+
+    <div
+    class="tab-pane fade show active"
+    id="v-pills-stairs"
+    role="tabpanel"
+    [ngClass]="{'show active': activeTab === 'stairs'}"
+    aria-labelledby="v-pills-stairs-tab"
+    tabindex="0">
+      <app-stairs [park]="park" />
+    </div>
+
+    <div
+    class="tab-pane fade show active"
+    id="v-pills-other"
+    role="tabpanel"
+    [ngClass]="{'show active': activeTab === 'other'}"
+    aria-labelledby="v-pills-other-tab"
+    tabindex="0">
+      <app-other [park]="park" />
+    </div>
+  </div>
+</div>
+
+<!-- *ngIf="banksContentAvailable"
+  *ngIf="stairsContentAvailable"
+  *ngIf="otherContentAvailable"
+  *ngIf="railsContentAvailable" -->

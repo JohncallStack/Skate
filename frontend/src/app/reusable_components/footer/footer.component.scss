@@ -1,0 +1,28 @@
+footer a:hover {
+    text-decoration: underline; /* Add underline on hover */
+  }
+
+  .footer-links{
+    display: flex;
+    justify-content: space-between;
+    padding: 0 1.5%;
+    color: white;
+    text-align: center;
+    
+  }
+
+  .copyright-style{
+    color: white;
+    text-align: center;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: .75rem;
+  }
+
+  .footer-links a {
+    text-decoration: none;
+  }
+
+ul{
+  display: flexbox;
+  align-items: center;
+}

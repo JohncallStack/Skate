@@ -1,0 +1,24 @@
+.imageThumbnail {
+    width: 200px;
+    height: auto;
+    border-radius: 10px
+}
+
+.imageTitle {
+    font-size: 1.25em;
+    color: white;
+}
+
+.container {
+    text-align: center;
+}
+
+.thumbnail-link {
+    cursor: pointer; /* Change cursor to pointer on hover */
+    text-align: center; /* Center content */
+    transition: transform 0.2s; /* Smooth scale effect */
+  
+    &:hover {
+      transform: scale(1.05); /* Slightly enlarge the thumbnail on hover */
+    }
+  }

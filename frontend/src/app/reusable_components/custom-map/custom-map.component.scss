@@ -1,0 +1,26 @@
+google-map {
+  height: 500px; // Adjust as necessary
+  width: 50%; // Full width
+    margin: 0 auto; // Center horizontally
+}
+
+.map-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    height: 100vh; /* Full viewport height (adjust as needed) */
+}
+
+.map-position {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+}
+
+.search-container{
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}

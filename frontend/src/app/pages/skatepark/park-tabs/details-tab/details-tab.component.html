@@ -1,0 +1,28 @@
+<table class="table table-bordered">
+    <tbody>  
+    <tr id="description">
+        <th scope="col">DESCRIPTION</th>
+        <td>{{ park?.description }}</td>
+      </tr>
+      <tr id="address">
+        <th scope="row">ADDRESS</th>
+        <td>{{ park?.address }}</td>
+      </tr>
+      <tr id="googleMapsLink">
+        <th scope="row">MAPS LINK</th>
+        <td colspan="2"><a [href]="park?.googleMapsLink" >Google Maps Link</a></td>
+      </tr>
+      <tr id="type">
+        <th scope="row">TYPE</th>
+        <td>{{ park?.surfaceType }}</td>
+      </tr>
+      <tr>
+        <th scope="row">PARKING</th> 
+        <td colspan="2"><a [href]="park?.parking" >Google Maps Link</a></td>
+      </tr>
+      <!-- <tr>
+        <th scope="row">WEBSITE</th>
+        <td colspan="2">{{park?.website}}</td>
+      </tr> -->
+    </tbody>
+  </table>

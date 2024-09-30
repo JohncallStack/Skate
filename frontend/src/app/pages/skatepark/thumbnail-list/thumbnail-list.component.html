@@ -1,0 +1,13 @@
+<div>
+    <ul class="list-group list-group-horizontal">
+        @for (thumbnail of skateparkThumbnails; track thumbnail.park_id){
+            <li>
+                <app-thumbnail
+                    [name] = "thumbnail.name"
+                    [mainImage] = "thumbnail.mainImage"
+                    [park_id] = "thumbnail.park_id" />
+            </li>}
+    </ul>
+</div>
+
+

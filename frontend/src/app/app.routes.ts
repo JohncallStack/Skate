@@ -1,9 +1,11 @@
-import { Routes, RouterModule } from '@angular/router';
-import { ContactsComponent } from './contacts/contacts.component';
-import { NewsComponent } from './news/news.component';
-import { RegisterComponent } from './register/register.component';
-import { SkateparksComponent } from './skateparks/skateparks.component';
-import { HomeComponent } from './home/home.component';
+import { Routes } from '@angular/router';
+import { ContactsComponent } from './pages/contacts/contacts.component';
+import { NewsComponent } from './pages/news/news.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { SkateparksComponent } from './pages/skateparks/skateparks.component';
+import { HomeComponent } from './pages/home/home.component';
+import { SkateparkComponent } from './pages/skatepark/skatepark.component';
+import { DbFormComponent } from './db-form/db-form.component';
 
 export const routes: Routes = [
   {
@@ -26,4 +28,12 @@ export const routes: Routes = [
     path: 'skateparks',
     component: SkateparksComponent,
   },
+  {
+    path: 'skatepark/:park_id',
+    component: SkateparkComponent,
+  },
+  {
+    path: 'form',
+    component: DbFormComponent,
+  }
 ];

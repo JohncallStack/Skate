@@ -1,1 +1,6 @@
-{}
+{
+  "hosted-zone:account=211125716326:domainName=johncallstack.me:region=eu-west-1": {
+    "Id": "/hostedzone/Z0410800359R551QVMSLL",
+    "Name": "johncallstack.me."
+  }
+}

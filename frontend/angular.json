@@ -65,7 +65,8 @@
               "buildTarget": "skate:build:production"
             },
             "development": {
-              "buildTarget": "skate:build:development"
+              "buildTarget": "skate:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

@@ -1,0 +1,17 @@
+<div
+  *ngIf="stairsContentAvailable"
+>
+  <div #sliderContainer class="slider">
+    <div class="slides">
+      <img
+        #slide
+        *ngFor="let image of stairsContent"
+        class="slide"
+        [src]="image.imageID"
+        alt="stairs Images"
+      />
+    </div>
+    <button class="prev" (click)="prevSlide()">&#10094;</button>
+    <button class="next" (click)="nextSlide()">&#10095;</button>
+  </div>
+</div>
