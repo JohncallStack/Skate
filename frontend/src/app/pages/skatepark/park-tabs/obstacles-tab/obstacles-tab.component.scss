@@ -10,7 +10,7 @@
   }
 
   .nav-link{
-    color: white; /* Ensures text is visible */
+    color: white;
 }
 
 .tab-pane{
@@ -36,7 +36,7 @@
   }
   
   .slider img:first-child {
-    display: block; /* Display the first image initially */
+    display: block;
   }
   
   img.displaySlide{
@@ -69,4 +69,9 @@
   @keyframes fade{
     from{opacity: .5;}
     to{opacity: 1}
+  }
+
+  .tab-titles{
+  font-family: 'PF Fuel Grime';
+  font-size: 1.25rem;
   }

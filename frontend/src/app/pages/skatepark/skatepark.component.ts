@@ -4,7 +4,6 @@ import { TitleImageComponent } from '../../reusable_components/title-image/title
 import { Skatepark } from '../../models/skatepark.model';
 import { ActivatedRoute } from '@angular/router';
 import { ParksService } from '../../services/parks.service';
-import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-skatepark',
@@ -38,19 +37,4 @@ export class SkateparkComponent implements OnInit {
     });
 }
 
-  // ngOnInit(): void {
-  //   this.parksService.getParks().subscribe(
-  //     (parks) => {
-  //       const park_id = this.route.snapshot.paramMap.get('park_id');
-  //       console.log('Park ID from route:', park_id);
-  //       if (park_id) {
-  //         this.skatepark = parks.find((park) => park.park_id === park_id);
-  //         console.log('Skatepark:', this.skatepark);
-  //       }
-  //     },
-  //     (error) => {
-  //       console.error('Error fetching parks', error);
-  //     }
-  //   );
-  // }
 }

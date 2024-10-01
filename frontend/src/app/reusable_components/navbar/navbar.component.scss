@@ -1,50 +1,51 @@
 .logo{
-  font-family: 'PF Fuel';
+  font-family: 'PF Fuel Decay';
 }
 
 nav {
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Center items vertically */
-  height: 60px; /* Set a fixed height for the navbar */
+  display: flex; 
+  align-items: center; 
+  height: 60px; 
 }
 
 .navbar-toggler {
-  border-color: white; /* Change border color to white */
+  border-color: white; 
   height: 40px;
-  margin-left: auto; /* Push it to the right */
-  padding: 0; /* Remove default padding */
+  margin-left: auto; 
+  padding: 0; 
 }
 
 .navbar-toggler-icon {
-  filter: brightness(0) invert(1); /* Makes the default icon white */
+  filter: brightness(0) invert(1); 
 }
 
 nav .navbar-nav,
 nav .d-flex {
-  display: flex; /* Use flexbox for layout */
-  align-items: center; /* Center items vertically */
+  display: flex; 
+  align-items: center; 
+  background-color: #000000; 
 }
 
 nav .navbar-brand {
-  margin-right: auto; /* Pushes the brand to the left */
+  margin-right: auto; 
 }
 
 .nav-link {
-  height: 35px; /* Match the height with the input */
-  display: flex; /* Ensure links behave like flex items */
-  align-items: center; /* Center text vertically */
-  padding: 0 15px; /* Add horizontal padding */
+  height: 35px; 
+  display: flex; 
+  align-items: center; 
+  padding: 0 15px; 
 }
 
 .form-control {
-  width: 200px; /* Set the desired width for the search box */
-  height: 30px; /* Set the height to align with the navbar items */
-  padding: 0.375rem 0.75rem; /* Bootstrap default padding */
+  width: 200px; 
+  height: 30px; 
+  padding: 0.375rem 0.75rem; 
 }
 
 .btn {
-  height: 30px; /* Match the button height with the input */
-  padding: 0 10px; /* Adjust padding if needed */
+  height: 30px; 
+  padding: 0 10px; 
 }
 
 .bg-black {

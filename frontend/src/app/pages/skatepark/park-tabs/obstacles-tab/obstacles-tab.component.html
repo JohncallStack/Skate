@@ -1,6 +1,6 @@
 <div class="d-flex align-items-start">
   <div
-    class="nav flex-column nav-tabs me-3"
+    class="nav flex-column nav-tabs me-3 tab-titles"
     id="v-pills-tab"
     role="tablist"
     aria-orientation="vertical"
@@ -65,7 +65,7 @@
       [class.active]="activeTab === 'stairs'"
       >Stairs</a
     >
-    <a
+    <!-- <a
       class="nav-link"
       id="v-pills-other-tab"
       data-bs-toggle="pill"
@@ -76,11 +76,12 @@
       (click)="setActiveTab('other')"
       [class.active]="activeTab === 'other'"
       >Other</a
-    >
+    > -->
   </div>
 
   <div class="tab-content" id="v-pills-tabContent">
-    <div   
+
+    <div 
     class="tab-pane fade show active"
     id="v-pills-ramps"
     role="tabpanel"
@@ -130,7 +131,7 @@
       <app-stairs [park]="park" />
     </div>
 
-    <div
+    <!-- <div
     class="tab-pane fade show active"
     id="v-pills-other"
     role="tabpanel"
@@ -138,11 +139,7 @@
     aria-labelledby="v-pills-other-tab"
     tabindex="0">
       <app-other [park]="park" />
-    </div>
+    </div> -->
   </div>
 </div>
 
-<!-- *ngIf="banksContentAvailable"
-  *ngIf="stairsContentAvailable"
-  *ngIf="otherContentAvailable"
-  *ngIf="railsContentAvailable" -->

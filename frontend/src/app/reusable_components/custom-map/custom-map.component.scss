@@ -1,26 +1,55 @@
-google-map {
-  height: 500px; // Adjust as necessary
-  width: 50%; // Full width
-    margin: 0 auto; // Center horizontally
+.map-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  height: 100vh; 
+  width: 100%;
 }
 
-.map-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    height: 100vh; /* Full viewport height (adjust as needed) */
+.search-container{
+  display: flex;
+  justify-content: center; 
+  align-items: center;
+  margin-top: 10px;
+
+}
+
+input {
+  padding: 10px; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  margin-right: 5px; 
+  flex: 1; 
+  min-width: 200px;
+  max-width: 300px;
+}
+
+button {
+  padding: 10px; 
+  border: none; 
+  background-color: #007bff; 
+  color: white; 
+  border-radius: 4px; 
+  cursor: pointer;
+  font-family: "PF Fuel Grime";
+}
+
+button:hover {
+  background-color: #0056b3; /* Darker shade on hover */
 }
 
 .map-position {
   display: flex;
   justify-content: center; /* Center horizontally */
   align-items: center;
+  width: 100%;
+  flex: 1;
 }
 
-.search-container{
-  display: flex;
-  justify-content: center; /* Center horizontally */
-  align-items: center;
-  margin-top: 10px;
-  margin-bottom: 10px;
+google-map {
+  // width: 100%; /* Make the map take full width */
+  // height: 100%; /* Make the map take full height */
+  max-width: 800px; /* Optional: set a max width for larger screens */
+  max-height: 500px; /* Optional: set a max height for larger screens */
+  margin: 20px 0;
 }

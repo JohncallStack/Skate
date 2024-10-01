@@ -1,15 +1,19 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, ViewChild, inject } from '@angular/core';
 import {
   GoogleMapsModule,
   MapMarker,
   MapInfoWindow,
 } from '@angular/google-maps';
 import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
+import { ThumbnailListComponent } from '../../pages/skatepark/thumbnail-list/thumbnail-list.component';
+import { ParkInfoService } from '../../services/park-info.service';
+import { ThumbnailComponent } from '../../pages/skatepark/thumbnail/thumbnail.component';
 
 @Component({
   selector: 'app-custom-map',
   standalone: true,
-  imports: [GoogleMapsModule, CommonModule],
+  imports: [GoogleMapsModule, CommonModule, RouterModule, ThumbnailListComponent],
   templateUrl: './custom-map.component.html',
   styleUrl: './custom-map.component.scss',
 })
@@ -17,9 +21,22 @@ export class CustomMapComponent {
   @ViewChild(MapInfoWindow) infoWindow?: MapInfoWindow;
   infoContent: string | undefined;
   nameContent: string | undefined;
-
+  parks: ThumbnailComponent[] | null = null;
+  parkIdContent: string | undefined;
+  
   // selectedMarker: { position: google.maps.LatLngLiteral; title: string } | null = null;
   // map!: google.maps.Map;
+
+  parkinfo = inject(ParkInfoService);
+
+  ngOnInit(){
+    this.parkinfo.parkData$.subscribe((data) => {
+      if(data){
+        this.parks = data;
+      }
+    });
+  }
+
 
   locations = [
     {
@@ -29,7 +46,7 @@ export class CustomMapComponent {
       lng: -9.002131990802203,
     },
     {
-      name: 'Shannon Pump track',
+      name: 'Shannon Pump Track',
       info: 'URL TO BE ADDED',
       lat: 52.706997024299014,
       lng: -8.8780264288358,
@@ -64,8 +81,14 @@ export class CustomMapComponent {
 
 openInfo(markerElem: MapMarker, content: string, name: string) {
     this.nameContent = name;  
-    this.infoContent = content;
-    this.infoWindow?.open(markerElem);
+    const selectedPark = this.parks?.find((park) => park.name === name);
+    if(selectedPark){
+      this.nameContent = selectedPark.name;
+      this.infoContent = content;
+      this.parkIdContent = selectedPark.park_id;
+      this.infoWindow?.open(markerElem);
+    }
+ 
   }
 
   searchLocation(searchTerm: string) {
@@ -74,7 +97,7 @@ openInfo(markerElem: MapMarker, content: string, name: string) {
     );
     if (location) {
       this.center = { lat: location.lat, lng: location.lng };
-      this.zoom = 15; // Adjust zoom level to focus on the searched location
+      this.zoom = 15; // Zooms in on the searched location
     } else {
       alert('Location not found');
     }

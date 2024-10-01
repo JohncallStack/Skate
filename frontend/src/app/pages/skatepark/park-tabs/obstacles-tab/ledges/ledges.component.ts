@@ -1,4 +1,14 @@
-import { Component, ElementRef, Input, QueryList, SimpleChanges, ViewChild, ViewChildren, inject } from '@angular/core';
+import {
+  Component,
+  ElementRef,
+  Input,
+  QueryList,
+  SimpleChanges,
+  ViewChild,
+  ViewChildren,
+  inject,
+  
+} from '@angular/core';
 import { Skatepark } from '../../../../../models/skatepark.model';
 import { SliderService } from '../../../../../services/slider.service';
 import { FilterService } from '../../../../../services/filter.service';
@@ -10,7 +20,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './ledges.component.html',
-  styleUrl: './ledges.component.scss'
+  styleUrl: './ledges.component.scss',
 })
 export class LedgesComponent {
   @ViewChildren('slide') slides!: QueryList<ElementRef<HTMLImageElement>>;
@@ -25,6 +35,9 @@ export class LedgesComponent {
     console.log('ngOnInit - Park data coming from ledges:', this.park);
   }
 
+  // private ledgesContentAvailableSubject = new BehaviorSubject<boolean>(false);
+  // ledgesContentAvailable$ = this.ledgesContentAvailableSubject.asObservable();
+
   ledgesContent: Image[] = [];
 
   private sliderService = inject(SliderService);
@@ -32,26 +45,19 @@ export class LedgesComponent {
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes['park'] && this.park) {
-      console.log('Park data updated:', this.park);
       this.filterImages();
       this.checkContent();
-      console.log('Slides available for slider:', this.slides.toArray());
     }
   }
 
   ngAfterViewInit(): void {
-    console.log('Park data on ngAfterViewInit:', this.park); // Log the park data
     if (this.park) {
       this.filterImages();
       this.checkContent();
-
-      //Start the slider if content is available
-        console.log('Starting slider with content:');
-        setTimeout(() => {
-          this.sliderService.initializeSlider(this.slides.toArray());
-        });
-        console.log('Slides available for slider:', this.slides.toArray());
-      }
+      setTimeout(() => {
+        this.sliderService.initializeSlider(this.slides.toArray());
+      });
+    }
   }
 
   filterImages(): void {
@@ -70,6 +76,7 @@ export class LedgesComponent {
       this.ledgesContentAvailable = true;
     }
   }
+
   prevSlide(): void {
     this.sliderService.prevSlide(this.slides.toArray());
   }
@@ -82,3 +89,10 @@ export class LedgesComponent {
     this.sliderService.stopSlider();
   }
 }
+
+// checkContent(): void {
+//   const available = this.ledgesContent.length > 0;
+//   this.contentAvailable.emit(available);
+//   this.cdr.detectChanges();
+//   console.log('Ledges content available:', available);
+// }

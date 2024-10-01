@@ -13,6 +13,7 @@ export class Skatepark {
   parking?: string;
   website?: string;
   googleMapsLink?: string;
+  city?: string;
 
   constructor(
     name: string,
@@ -26,8 +27,9 @@ export class Skatepark {
     images?: Image[],
     parking?: string,
     website?: string,
-    googleMapsLink?: string
-    
+    googleMapsLink?: string,
+    city?: string
+
   ) {
     this.name = name;
     this.park_id = park_id;
@@ -41,6 +43,7 @@ export class Skatepark {
     this.parking = parking;
     this.website = website;
     this.googleMapsLink = googleMapsLink;
+    this.city = city;
   }
 }
 

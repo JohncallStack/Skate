@@ -22,8 +22,7 @@
     <map-info-window>
         <div>
           <h3>{{ nameContent }}</h3>
-          <p>{{ infoContent }}</p>
-          <p>INFO</p>
+          <a [routerLink]="['/skatepark', parkIdContent]" style="color: #007bff; text-decoration: none;">View Details</a>
         </div>
     </map-info-window>
   </google-map>

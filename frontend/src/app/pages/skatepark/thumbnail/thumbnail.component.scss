@@ -1,24 +1,40 @@
 .imageThumbnail {
-    width: 200px;
-    height: auto;
-    border-radius: 10px
+  max-width: 100%;
+  width: 200px;
+  height: auto;
+  border-radius: 15px;
 }
 
 .imageTitle {
-    font-size: 1.25em;
-    color: white;
+  font-size: 1.25em;
+  color: white;
+  margin-top: 5px;
+  text-align: center;
+  font-family: "PF Fuel Grime";
 }
 
 .container {
-    text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  margin: 10px;
+}
+
+.thumbnail-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .thumbnail-link {
-    cursor: pointer; /* Change cursor to pointer on hover */
-    text-align: center; /* Center content */
-    transition: transform 0.2s; /* Smooth scale effect */
-  
-    &:hover {
-      transform: scale(1.05); /* Slightly enlarge the thumbnail on hover */
-    }
-  }
+  cursor: pointer;
+
+  transition: transform 0.2s;
+}
+
+.thumbnail-link:hover {
+  transform: scale(1.05);
+}
