@@ -1,7 +1,60 @@
 <div class="card text-bg-dark">
-  <img [src]="image" class="img-fluid img_bw" alt="..." />
-    <div class="card-img-overlay d-flex flex-column justify-content-end">
-      <h2 class="card-title">{{title}}</h2>
-      <h4 class="card-text">{{subtitle}}</h4>
-    </div>
+  <img
+    class="jarallax-img"
+    [ngSrc]="image"
+    ngSrcset="350w, 575w, 767w, 991w, 1199w, 1399w,1599w, 1919w"
+    width="1600"
+    height="900"
+    priority
+    class="img-fluid"
+    style="object-fit: cover; width: 100%"
+/>
+  
+  <div class="card-img-overlay d-flex flex-column justify-content-end">
+    <h2 class="card-title">{{ title }}</h2>
+    <h4 class="card-text">{{ subtitle }}</h4>
+  </div>
 </div>
+
+
+
+<!-- Add preconnect to index.html at some point -->
+
+
+<!-- <div class="card text-bg-dark">
+  <img 
+    [ngSrc]="getImageUrl(image)" 
+    class="img-fluid img_bw" 
+    [alt]="image?.description || 'Default image'" 
+    width="600" 
+    height="400" 
+    priority
+  />
+  <div class="card-img-overlay d-flex flex-column justify-content-end">
+    <h2 class="card-title">{{ title }}</h2>
+    <h4 class="card-text">{{ subtitle }}</h4>
+  </div>
+</div> -->
+
+
+<!-- srcset= "
+assets/Home/m_kennett-1919w.webp 1919w,
+assets/Home/m_kennett-1599w.webp 1599w,
+assets/Home/m_kennett-1399w.webp 1399w,
+assets/Home/m_kennett-1199w.webp 1199w,
+assets/Home/m_kennett-991w.webp 991w,
+assets/Home/m_kennett-767w.webp 767w,
+assets/Home/m_kennett-575w.webp 575w" -->
+
+
+<!-- <img
+    [srcset]="srcset"
+    ngSrcset="1919w, 1599w, 1399w, 1199w, 991w, 767w, 575w"
+    sizes = "100vw"
+    priority
+    placeholder="blur"
+    width="1920"
+    height="1080"
+    class="img-fluid img_bw"
+    alt="..."
+  /> -->

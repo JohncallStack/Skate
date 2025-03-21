@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { ParksService } from './../../../../services/parks.service';
+import { Component, Input, OnInit } from '@angular/core';
 import { WeatherService } from './weather.service'; 
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule
-import { Observable, catchError, tap, throwError } from 'rxjs'; // Import Observable, catchError, tap, throwError
 import { Skatepark } from '../../../../models/skatepark.model';
+
 
 @Component({
   selector: 'app-weather-tab',
@@ -12,22 +13,21 @@ import { Skatepark } from '../../../../models/skatepark.model';
   templateUrl: './weather-tab.component.html',
   styleUrl: './weather-tab.component.scss'
 })
-export class WeatherTabComponent {
-  @Input() park?: Skatepark;
+export class WeatherTabComponent implements OnInit{
+
+  @Input() park?: Skatepark | null;
   weatherData: any;
   errorMessage: string = '';
-  constructor(private weatherService: WeatherService) {}
 
-  get city(): string {
-    const city = this.park?.city || 'ennis'; // Map the image URLs
-    console.log('City:', city); // Log mapped image URLs
-    return city;
-    console.log('City:', city);
-  }
+  constructor(private weatherService: WeatherService, private parksService: ParksService
+    ) {}
 
   ngOnInit(){
-    
-    this.getWeather(this.city);
+    console.log('Park object:', this.park); // Debugging line
+    if (this.park && this.park.city){
+      this.getWeather(this.park.city);      
+    }
+
   }
 
   getWeather(city: string) {
@@ -42,6 +42,7 @@ export class WeatherTabComponent {
       }
     );
   }
+
   getWeatherEmoji(weatherID: number) {
     switch (true) {
       case (weatherID >= 200 && weatherID < 300):
@@ -64,3 +65,13 @@ export class WeatherTabComponent {
 
 }
 }
+
+
+    //       this.route.params.subscribe(params => {
+    //         const park_id = params['park_id'];
+    //         if(park_id){
+    //           this.parksService.getParkById(park_id).subscribe((park: Skatepark | null) => {
+    //             this.skatepark = park;
+    //     });
+    //   }
+    // });

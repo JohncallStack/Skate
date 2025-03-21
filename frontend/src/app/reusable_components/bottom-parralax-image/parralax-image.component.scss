@@ -1,0 +1,47 @@
+.parallax-loading {
+    background-repeat: no-repeat;
+    background-position: center bottom 90px;
+    background-attachment: fixed;
+    filter: blur(10px);
+    transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+  }
+
+  .parallax {
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center bottom 90px;
+    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+  }
+
+.card {
+    position: relative; 
+  }
+  
+  .card-img-overlay {
+    position: absolute;
+    bottom: 25%; 
+    left: 50%;
+    transform: translateX(-50%); 
+    text-align: center; 
+    color: white; 
+    padding: 20px 0;
+    text-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
+    font-family: 'PF Fuel Grime';
+  }
+  
+  .card-title {
+    font-size: 10vw; 
+    margin-bottom: 0.5rem; 
+  }
+  
+  .card-text {
+    font-size: 5vw; 
+    width: 100%; 
+    margin: 0 auto; 
+  }
+  
+  .img-fluid {
+    width: 100%; 
+    height: auto; 
+  }
+  

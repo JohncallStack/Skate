@@ -1,0 +1,26 @@
+<div class="card text-bg-dark">
+  <div
+  *ngIf="!imageLoaded"
+  class="parallax-loading"
+  [ngStyle]="{
+    'background-image': 'url(' + lowResImage + ')',
+    'height.px': containerHeight, 
+    'background-size': 'cover ' + containerHeight + 'px',
+  }"
+></div>
+
+<div
+  *ngIf="imageLoaded"
+  class="parallax"
+  [ngStyle]="{
+    'background-image': 'url(' + backgroundImageUrl + ')',
+    'height.px': containerHeight, 
+    'background-size': 'cover ' + containerHeight + 'px',
+  }"
+></div>
+
+  <div class="card-img-overlay d-flex flex-column justify-content-end">
+    <h2 class="card-title">{{ title }}</h2>
+    <h4 class="card-text">{{ subtitle }}</h4>
+  </div>
+</div>

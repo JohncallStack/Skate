@@ -1,7 +1,30 @@
-<app-title-image
-  [image]="'assets/m_kennett.jpg'"
+<!-- <app-top-spacer /> -->
+
+<app-title-image-parralax
+  [imagePath]="'/Skate/m_kennett.jpg'"
   title="SkatEIRE"
   subtitle="Irish Skatepark Directory"
   class="text-styling"
 />
+
 <app-about />
+
+<app-middle-image
+  [routerLink]="['/skateparks']"
+  routerLinkActive="router-link-active"
+  [image]="'Skate/shannonskatepark_obstacle_bank.jpg'"
+  title="SKATEPARKS"
+  subtitle="Click Here to Find Skateparks Near You"
+  class="text-styling"
+/>
+
+<app-upload-park-text />
+
+<app-parralax-image
+  [routerLink]="['/form']"
+  routerLinkActive="router-link-active"
+  [imagePath]="'Skate/shannonpumptrack_main_image.JPG'"
+  title="UPLOAD PARK"
+  subtitle="Click Here to Add Your Park to the Site"
+  class="text-styling"
+/>

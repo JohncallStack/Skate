@@ -1,0 +1,16 @@
+.parallax-loading {
+  height: 500px;
+  width: 100%;
+  background-size: cover;
+  background-position: top center;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.parallax {
+  height: 500px;
+  width: 100%;  
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: top center;
+  transition: opacity 0.5s ease-in-out;
+}

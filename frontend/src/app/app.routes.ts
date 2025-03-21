@@ -6,6 +6,7 @@ import { SkateparksComponent } from './pages/skateparks/skateparks.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SkateparkComponent } from './pages/skatepark/skatepark.component';
 import { DbFormComponent } from './db-form/db-form.component';
+import { PhotoTestsComponentComponent } from './test/photo-tests-component/photo-tests-component.component';
 
 export const routes: Routes = [
   {
@@ -35,5 +36,9 @@ export const routes: Routes = [
   {
     path: 'form',
     component: DbFormComponent,
+  },
+  {
+    path: 'tests',
+    component: PhotoTestsComponentComponent,
   }
 ];

@@ -1,0 +1,27 @@
+.parallax-loading {
+    min-height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(10px);
+    transition: opacity 0.5s ease-in-out, height 0.5s ease-in-out;
+  }
+  
+  .parallax {
+    min-height: 200px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    transition: height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+  }
+  
+  .image-loaded .parallax {
+    opacity: 1;
+}
+
+.image-loaded .parallax-loading {
+    // display: none;
+}

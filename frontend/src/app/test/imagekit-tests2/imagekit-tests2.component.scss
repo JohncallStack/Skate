@@ -1,0 +1,28 @@
+.parallax-loading {
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    filter: blur(10px);
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.parallax {
+    height: 500px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.image-loaded .parallax {
+    opacity: 1; /* Now correctly updates */
+}
+
+.image-loaded .parallax-loading {
+    opacity: 0; /* Now correctly hides low-res */
+}

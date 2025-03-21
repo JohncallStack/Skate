@@ -6,9 +6,9 @@ import {
 } from '@angular/google-maps';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { ThumbnailListComponent } from '../../pages/skatepark/thumbnail-list/thumbnail-list.component';
+import { ThumbnailListComponent } from '../../pages/skateparks/thumbnail-list/thumbnail-list.component';
 import { ParkInfoService } from '../../services/park-info.service';
-import { ThumbnailComponent } from '../../pages/skatepark/thumbnail/thumbnail.component';
+import { ThumbnailComponent } from '../../pages/skateparks/thumbnail/thumbnail.component';
 
 @Component({
   selector: 'app-custom-map',

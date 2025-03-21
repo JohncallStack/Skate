@@ -1,0 +1,11 @@
+<!-- Low-res Placeholder -->
+<div [class.image-loaded]="imageLoaded"
+     class="parallax-loading" 
+     [ngStyle]="{'background-image': 'url(' + lowResImage + ')'}">
+</div>
+
+<!-- High-res Parallax Image -->
+<div [class.image-loaded]="imageLoaded"
+     class="parallax" 
+     [ngStyle]="{'background-image': 'url(' + backgroundImageUrl + ')'}">
+</div>

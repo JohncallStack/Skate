@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { ThumbnailComponent } from '../pages/skatepark/thumbnail/thumbnail.component';
+import { ThumbnailComponent } from '../pages/skateparks/thumbnail/thumbnail.component';
 
 
 @Injectable({

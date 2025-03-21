@@ -15,3 +15,26 @@
     font-weight: normal;
     font-style: normal;
 }
+
+html, body {
+    background-color: black !important;
+    height: 100%;
+    margin: 0;
+  }
+  
+  .container-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  .content {
+    flex: 1; /* This makes the content expand and push the footer down */
+  }
+  
+  .footer {
+    background-color: #333; /* Example color */
+    color: white;
+    text-align: center;
+    padding: 15px;
+  }

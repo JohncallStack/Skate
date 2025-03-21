@@ -1,4 +1,4 @@
-import { ParkInfoService } from './../../../services/park-info.service';
+import { ParkInfoService } from '../../../services/park-info.service';
 import { Component, inject } from '@angular/core';
 import { ThumbnailComponent } from '../thumbnail/thumbnail.component';
 import { ParkImageType } from '../../../models/image.model';

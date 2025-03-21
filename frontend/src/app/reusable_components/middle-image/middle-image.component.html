@@ -1,0 +1,19 @@
+<div class="card text-bg-dark">
+
+    <img
+    class=""
+    [ngSrc]="image"
+    ngSrcset="350w, 400w, 600w, 700w, 1024w, 1080w, 1200w, 1600w, 1920w"
+    width="1600"
+    height="900"
+    priority
+    class="img-fluid"
+    style="object-fit: cover; width: 100%"
+/>
+
+
+    <div class="card-img-overlay d-flex flex-column justify-content-end">
+        <h2 class="card-title">{{ title }}</h2>
+        <h4 class="card-text">{{ subtitle }}</h4>
+      </div>
+</div>

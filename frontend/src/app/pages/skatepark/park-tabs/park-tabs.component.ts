@@ -18,7 +18,7 @@ export class ParkTabsComponent {
   @Input() park?: Skatepark;
 
 ngOnChanges(){
-  console.log('Park-tabs Data', this.park);
+  console.log('Park-tabs Data', this.park?.name);
 }
 
 }

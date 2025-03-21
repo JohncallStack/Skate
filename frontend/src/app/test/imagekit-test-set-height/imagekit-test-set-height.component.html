@@ -1,0 +1,13 @@
+<!-- Low-res Placeholder -->
+<div
+  *ngIf="!imageLoaded"
+  class="parallax-loading"
+  [ngStyle]="{ 'background-image': 'url(' + lowResImage + ')', 'height.px' : containerHeight }"
+></div>
+
+<!-- Parallax Image (Replaces Placeholder When Ready) -->
+<div
+  *ngIf="imageLoaded"
+  class="parallax"
+  [ngStyle]="{ 'background-image': 'url(' + backgroundImageUrl + ')', 'height.px' : containerHeight }"
+></div>
