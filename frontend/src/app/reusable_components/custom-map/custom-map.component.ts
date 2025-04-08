@@ -1,4 +1,4 @@
-import { Component, ViewChild, inject } from '@angular/core';
+import { Component, HostListener, ViewChild, inject } from '@angular/core';
 import {
   GoogleMapsModule,
   MapMarker,
@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { ThumbnailListComponent } from '../../pages/skateparks/thumbnail-list/thumbnail-list.component';
 import { ParkInfoService } from '../../services/park-info.service';
 import { ThumbnailComponent } from '../../pages/skateparks/thumbnail/thumbnail.component';
+import { ScreensizeService } from '../../services/screensize.service';
 
 @Component({
   selector: 'app-custom-map',
@@ -28,8 +29,11 @@ export class CustomMapComponent {
   // map!: google.maps.Map;
 
   parkinfo = inject(ParkInfoService);
+  screenSizeService = inject(ScreensizeService);
+  googleMapsWidth = this.getMapWidth();
 
   ngOnInit(){
+    this.getMapWidth();
     this.parkinfo.parkData$.subscribe((data) => {
       if(data){
         this.parks = data;
@@ -101,6 +105,15 @@ openInfo(markerElem: MapMarker, content: string, name: string) {
     } else {
       alert('Location not found');
     }
+  }
+
+  @HostListener('window:resize')
+  getMapWidth() {
+    const screenWidth = this.screenSizeService.getScreenSize();
+    if (screenWidth < 500) {
+      const googleMapWidth = screenWidth - 40;
+      return googleMapWidth; }
+      else return 500;
   }
 
 }

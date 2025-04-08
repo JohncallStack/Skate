@@ -12,11 +12,12 @@ import { CommonModule } from '@angular/common';
 import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 import { Skatepark } from '../models/skatepark.model';
 import { ParkImageType } from '../models/image.model';
+import { TitleImageParralaxComponent } from "../reusable_components/title-image-parralax/title-image-parralax.component";
 
 @Component({
   selector: 'app-db-form',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterOutlet, FormsModule, ReactiveFormsModule, TitleImageParralaxComponent],
   providers: [ParksService],
   templateUrl: './db-form.component.html',
   styleUrl: './db-form.component.scss',

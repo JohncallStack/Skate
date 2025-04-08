@@ -5,7 +5,7 @@ import { FooterComponent } from './reusable_components/footer/footer.component';
 import { ParksService } from './services/parks.service';
 import { ImagekitioAngularModule } from 'imagekitio-angular';
 import { NgOptimizedImage } from '@angular/common';
-import { BottomSpacerComponent } from "./reusable_components/bottom-spacer/bottom-spacer.component";
+import { BottomSpacerComponent } from "./pages/home/bottom-spacer/bottom-spacer.component";
 
 // import { HttpClientModule } from '@angular/common/http'; // Import HttpClientModule here
 

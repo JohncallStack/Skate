@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { ParkTabsComponent } from './park-tabs/park-tabs.component';
-import { TitleImageComponent } from '../../reusable_components/title-image/title-image.component';
 import { Skatepark } from '../../models/skatepark.model';
 import { ActivatedRoute } from '@angular/router';
 import { ParksService } from '../../services/parks.service';
@@ -9,7 +8,7 @@ import { MiddleImageComponent } from "../../reusable_components/middle-image/mid
 @Component({
   selector: 'app-skatepark',
   standalone: true,
-  imports: [ParkTabsComponent, TitleImageComponent, MiddleImageComponent],
+  imports: [ParkTabsComponent, MiddleImageComponent],
   templateUrl: './skatepark.component.html',
   styleUrl: './skatepark.component.scss',
 })

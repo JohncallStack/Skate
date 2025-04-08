@@ -6,8 +6,8 @@ import { ParralaxImageComponent } from '../../reusable_components/bottom-parrala
 import { UploadParkTextComponent } from './upload-park-text/upload-park-text.component';
 import { RouterLink } from '@angular/router';
 import { RouterLinkActive } from '@angular/router';
-import { TopSpacerComponent } from "../../reusable_components/top-spacer/top-spacer.component";
-import { BottomSpacerComponent } from "../../reusable_components/bottom-spacer/bottom-spacer.component";
+import { TopSpacerComponent } from "./top-spacer/top-spacer.component";
+import { BottomSpacerComponent } from "./bottom-spacer/bottom-spacer.component";
 
 @Component({
   selector: 'app-home',
