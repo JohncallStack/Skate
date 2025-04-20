@@ -13,11 +13,13 @@ import { BehaviorSubject, Observable, ReplaySubject } from 'rxjs';
 import { Skatepark } from '../models/skatepark.model';
 import { ParkImageType } from '../models/image.model';
 import { TitleImageParralaxComponent } from "../reusable_components/title-image-parralax/title-image-parralax.component";
+import { FileUploadComponent } from "./file-upload/file-upload.component";
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-db-form',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, FormsModule, ReactiveFormsModule, TitleImageParralaxComponent],
+  imports: [CommonModule, RouterOutlet, FormsModule, ReactiveFormsModule, TitleImageParralaxComponent, FileUploadComponent, HttpClientModule],
   providers: [ParksService],
   templateUrl: './db-form.component.html',
   styleUrl: './db-form.component.scss',

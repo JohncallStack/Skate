@@ -30,12 +30,22 @@ export const handler: APIGatewayProxyHandler = async (event) => {
     await docClient.send(command);
     return {
       statusCode: 201,
+      headers: {
+        "Content-Type": "application/json",
+        // Optional: add CORS headers if not handled elsewhere
+        "Access-Control-Allow-Origin": "*",
+      },
       body: JSON.stringify({ message: "Post created successfully", parkId }),
     };
   } catch (error) {
     console.error(error);
     return {
       statusCode: 500,
+      headers: {
+        "Content-Type": "application/json",
+        // Optional: add CORS headers if not handled elsewhere
+        "Access-Control-Allow-Origin": "*",
+      },
       body: JSON.stringify({ message: "Error creating post in DynamoDB" }),
     };
   }

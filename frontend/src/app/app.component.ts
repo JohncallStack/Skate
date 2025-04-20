@@ -19,7 +19,7 @@ import { BottomSpacerComponent } from "./pages/home/bottom-spacer/bottom-spacer.
     NgOptimizedImage,
     ImagekitioAngularModule,
     BottomSpacerComponent
-],
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })

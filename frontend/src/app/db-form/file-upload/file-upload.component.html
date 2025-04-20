@@ -1,0 +1,26 @@
+<div>
+    <input class="form-control" type="file"
+    (change)="onChange($event)"
+    >
+
+    <button (click)="onUpload()"
+        class="btn btn-success">
+        Upload
+    </button>
+</div>
+
+<div *ngIf="file">
+    <!-- <p *ngFor="let f of files"> -->
+    <strong>{{file.name}}</strong> {{file.size}} bytes - {{file.type}}
+    <!-- </p> -->
+</div>
+
+<div class="container" *ngIf="loading">
+    <div class="row">
+        <div class="col text-center">
+            <div class="spinner-border" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+    </div>
+</div>
