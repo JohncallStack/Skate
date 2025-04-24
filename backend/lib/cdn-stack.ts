@@ -12,15 +12,11 @@ interface CdnStackProps extends cdk.StackProps {
   domainName: string
   siteDomain: string
   staticFilesPath: string
-  websiteBucket: s3.Bucket; // Add this to accept the bucket from ApiResourcesStack
-  restApiId: string; // Add this to accept the REST API ID
-  restApiRegion: string; // Add this to get the region
 }
 
 export class CdnStack extends cdk.Stack {
 
   public distribution: cloudfront.Distribution;
-  // public readonly websiteBucket: s3.Bucket;
 
   constructor(scope: Construct, id: string, props: CdnStackProps) {
     super(scope, id, props);
@@ -30,8 +26,15 @@ export class CdnStack extends cdk.Stack {
     const siteDomain = props.siteDomain;
 
     // Create an S3 bucket to store the website files
-    const websiteBucket = props.websiteBucket; // Use the bucket from ApiResourcesStack
-
+    const websiteBucket = new s3.Bucket(this, 'WebsiteBucket', {
+      bucketName: siteDomain,
+      websiteIndexDocument: 'index.html',
+      websiteErrorDocument: 'index.html',
+      publicReadAccess: true,
+      blockPublicAccess: s3.BlockPublicAccess.BLOCK_ACLS,
+      removalPolicy: cdk.RemovalPolicy.DESTROY,
+      autoDeleteObjects: true,
+    });
 
     // Get the hosted zone
     const zone = route53.HostedZone.fromLookup(this, 'Zone', { domainName });
@@ -67,19 +70,6 @@ export class CdnStack extends cdk.Stack {
     });
 
     this.distribution = distribution;
-
-    // // ✅ NEW: Route /api/* paths to API Gateway (restApi) instead of S3
-    const apiOrigin = new origins.HttpOrigin(`${props.restApiId}.execute-api.${this.region}.amazonaws.com`, {
-      originPath: '/prod', // Adjust if you use a different deployment stage
-    });
-
-    distribution.addBehavior('/api/*', apiOrigin, {
-      allowedMethods: cloudfront.AllowedMethods.ALLOW_ALL,
-      cachePolicy: cloudfront.CachePolicy.CACHING_DISABLED,
-      originRequestPolicy: cloudfront.OriginRequestPolicy.ALL_VIEWER,
-      viewerProtocolPolicy: cloudfront.ViewerProtocolPolicy.REDIRECT_TO_HTTPS,
-    });
-
 
     // Create Route53 alias record for the CloudFront distribution
     new route53.ARecord(this, 'SiteAliasRecord', {
